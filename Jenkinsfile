@@ -3,7 +3,7 @@ pipeline {
     stages {
 	stage('Test'){
 		steps {
-			sudo docker ps
+			docker ps
 			}
 		}
             }
