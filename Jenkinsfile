@@ -3,6 +3,7 @@ pipeline {
     stages {
 	stage('Test'){
 		steps {
+			whoami
 			docker ps
 			}
 		}
