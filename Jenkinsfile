@@ -1,9 +1,13 @@
 pipeline {
     agent { dockerfile true } 
     stages {
-	stage('Test'){
+	stage('validate') {
 		steps {
 			whoami
+			}
+		}
+	stage('Test'){
+		steps {
 			docker ps
 			}
 		}
