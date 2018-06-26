@@ -2,7 +2,7 @@ pipeline {
     agent { dockerfile true } 
     stages {
 	stage('Test'){
-	try {
+		try {
            			 // Start database container here
 		            	 // sh 'docker run -d --name db -p 8091-8093:8091-8093 -p 11210:11210 arungupta/oreilly-couchbase:latest'
 
@@ -15,12 +15,12 @@ pipeline {
             //  sh 'mvn exec:java -DskipTests'
             //}
 		sh 'docker ps'
-        } catch (error) {
-        } finally {
+	          } catch (error) {
+	          } finally {
             // Stop and remove database container here
             //sh 'docker-compose stop db'
             //sh 'docker-compose rm db'
-        }
-			}
+                            }
+		   }
 		}
             }
