@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-		sh 'echo OK'
+		sh 'echo ${env.BUILD_ID}'
             }
         }
     }
