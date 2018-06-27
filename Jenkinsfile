@@ -1,12 +1,8 @@
 pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-		sh "echo ${env.BUILD_ID}"
-		sh 'ls'
-		sh "echo $Image.tag}"
-            }
+    agent {
+        docker {
+            image '7db65d51c42b94c6ecaf28bc4ffa47a51ede7c71:latest'
+            args '-p 5000:5000'
         }
     }
-}
+	}
