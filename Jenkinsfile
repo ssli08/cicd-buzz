@@ -5,11 +5,10 @@ pipeline {
             args '-p 5000:5000'
         }
     }
-   agent any
    stages {
         stage("test env") {
             steps {
-                sh 'curl -I http://localhost:5000'
+                sh 'hostname'
             }
         }
 	}
