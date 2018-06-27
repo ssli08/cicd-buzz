@@ -8,6 +8,7 @@ pipeline {
    stages {
         stage("test env") {
             steps {
+		sh 'top'
                 sh 'curl -I http://localhost:5000'
             }
         }
