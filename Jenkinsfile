@@ -1,15 +1,15 @@
 pipeline {
     agent {
         docker {
-            image '7db65d51c42b94c6ecaf28bc4ffa47a51ede7c71:latest'
-            args '-p 5000:5000'
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
         }
     }
-   stages {
-        stage("test env") {
+    stages {
+        stage('Build') {
             steps {
-                sh 'hostname'
+                sh 'mvn -B'
             }
         }
-	}
+    }
 }
