@@ -5,4 +5,11 @@ pipeline {
             args '-p 5000:5000'
         }
     }
+   stages {
+        stage("test env") {
+            steps {
+                sh 'curl -I http://localhost:5000'
+            }
+        }
+	}
 }
