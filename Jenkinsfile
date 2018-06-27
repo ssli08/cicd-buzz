@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
 		sh "echo ${env.BUILD_ID}"
-		sh "echo ${docker.Image.tag}"
+		sh "echo ${docker.Image.tag('ssli-test')}"
             }
         }
     }
